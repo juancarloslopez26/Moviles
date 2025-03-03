@@ -23,31 +23,7 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}> 
-      <Text style={styles.label}>Alimentos</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={setText}
-        value={text}
-        placeholder="Escribe aquí"
-      />
-      <View style={styles.buttonContainer}>
-        <Button title="Agregar" onPress={addItem} />
-      </View>
-      <FlatList
-        data={items}
-        renderItem={({ item }) => (
-          <View style={styles.itemContainer}>
-            <Text style={[styles.text, item.purchased && styles.purchasedText]}>{item.name}</Text>
-            <View style={styles.buttonGroup}>
-              <Button title="Eliminar" onPress={() => removeItem(item)} />
-              <Button title={item.purchased ? "No comprado" : "Comprado"} onPress={() => togglePurchased(item)} />
-            </View>
-          </View>
-        )}
-        keyExtractor={(item, index) => index.toString()}
-      />
-    </View>
+    
   );
 }
 
